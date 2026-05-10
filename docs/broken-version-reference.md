@@ -14,7 +14,7 @@ Workflow ban đầu không có bước:
 Log thường gặp:
 
 ```text
-[ERROR] The goal you specified requires a project to execute but there is no POM in this directory
+[[ERROR] The goal you specified requires a project to execute but there is no POM in this directory](Error:  The goal you specified requires a project to execute but there is no POM in this directory (/home/runner/work/broken-pipeline/broken-pipeline). Please verify you invoked Maven from the correct directory. -> [Help 1])
 ```
 
 ## 2. `pom.xml` dùng Logback version không tồn tại
@@ -32,7 +32,11 @@ Dependency lỗi:
 Log thường gặp:
 
 ```text
-Could not find artifact ch.qos.logback:logback-classic:jar:9.9.9 in central
+Error:  Failed to execute goal on project shipping-app: Could not resolve dependencies for project com.lab:shipping-app:jar:1.0-SNAPSHOT
+Error:  dependency: ch.qos.logback:logback-classic:jar:9.9.9 (compile)
+Error:  	Could not find artifact ch.qos.logback:logback-classic:jar:9.9.9 in central (https://repo.maven.apache.org/maven2)
+Error:  
+Error:  -> [Help 1])
 ```
 
 ## 3. `pom.xml` dùng Surefire quá cũ
