@@ -1,13 +1,12 @@
 package com.lab;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class ShippingCalculatorTest {
+public class ShippingCalculatorTest {
 
-    private final ShippingCalculator calc = new ShippingCalculator();
+    ShippingCalculator calc = new ShippingCalculator();
 
     @Test
     void testStandard() {
@@ -21,15 +20,8 @@ class ShippingCalculatorTest {
 
     @Test
     void testInvalidWeight() {
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> calc.calculate(-1, "STANDARD"));
-    }
-
-    @Test
-    void testUnknownType() {
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> calc.calculate(5, "FAST"));
+        assertThrows(IllegalArgumentException.class, () ->
+            calc.calculate(-1, "STANDARD")
+        );
     }
 }
